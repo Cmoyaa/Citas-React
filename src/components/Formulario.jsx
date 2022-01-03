@@ -100,7 +100,7 @@ function Formulario({ pacientes, setPacientes }) {
                     <input 
                         id="fecha"
                         type="date" 
-                        className="bg-white border-2 w-full p-2 my-3 rounded-md"
+                        className="bg-white text-black border-2 w-full p-2 my-3 rounded-md"
                         value={fecha}
                         onChange={ (e) => setFecha(e.target.value) }
                     />
