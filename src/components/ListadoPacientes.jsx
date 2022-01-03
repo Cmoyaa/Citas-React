@@ -3,7 +3,7 @@ import logo from '../assets/img/no-info.png';
 
 function ListadoPacientes({ pacientes}) {
     return (
-        <div className="md:w-1/2 lg:w-3/5">
+        <div className="md:w-1/2 lg:w-3/5 mb-5">
 
             { pacientes && pacientes.length ? (
                 <>
