@@ -1,4 +1,5 @@
-import Paciente from "./Paciente"
+import Paciente from "./Paciente";
+import logo from '../assets/img/no-info.png';
 
 function ListadoPacientes({ pacientes}) {
     return (
@@ -24,6 +25,8 @@ function ListadoPacientes({ pacientes}) {
                 <>
                     <h2 className="font-black text-3xl text-center">Aún no hay <span className="text-green-500">Pacientes</span></h2>
                     <p className="text-lg my-5 text-center">Agrega un paciente <span className="text-green-500 font-bold">y se mostrará a continuación</span></p>
+
+                    <img src={logo} className="rounded-2xl w-80 mx-auto" />
                 </>
             ) }
 
