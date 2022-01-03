@@ -8,9 +8,9 @@ function App() {
   const [ pacientes, setPacientes ] = useState([]);
 
   return (
-    <div className="container mx-auto mt-10">
+    <div className="container mx-auto mt-10 mb-5">
       <Header />
-      <div className="mt-12 md:flex mb-auto">
+      <div className="mt-12 md:flex">
         <Formulario 
           pacientes={pacientes}
           setPacientes={setPacientes} 
