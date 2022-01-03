@@ -12,7 +12,9 @@ function Formulario({ pacientes, setPacientes }) {
 
     const generarId = () => {
         const random = Math.random().toString(10).substr(2);
-        return random;
+        const fecha = Date.now().toString(36)
+        
+        return random + fecha;
     }
 
     const handleSubmit = (e) => {
