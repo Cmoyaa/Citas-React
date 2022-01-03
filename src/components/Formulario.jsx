@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Error from "./Error";
 
-function Formulario({ pacientes, setPacientes }) {
+function Formulario({ pacientes, setPacientes, paciente }) {
     const  [nombre, setNombre] = useState('');
     const  [propietario, setPropietario] = useState('');
     const  [correo, setCorreo] = useState('');
@@ -9,6 +9,16 @@ function Formulario({ pacientes, setPacientes }) {
     const  [sintomas, setSintomas] = useState('');
 
     const [error, setError] = useState(false);
+
+    useEffect(() => {
+        if( Object.keys(paciente).length > 0 ) {
+            setNombre(paciente.nombre)
+            setPropietario(paciente.propietario)
+            setCorreo(paciente.correo)
+            setFecha(paciente.fecha)
+            setSintomas(paciente.sintomas)
+        }
+    }, [paciente])
 
     const generarId = () => {
         const random = Math.random().toString(10).substr(2);
@@ -33,14 +43,24 @@ function Formulario({ pacientes, setPacientes }) {
             propietario, 
             correo, 
             fecha, 
-            sintomas,
-            id: generarId()
+            sintomas
         }
 
-        //... se hace una copia y evita que se reemplacen los datos del objetoPaciente
-        setPacientes([...pacientes, objetoPaciente]);
+        if (paciente.id) {
+            // Editar registro
+            objetoPaciente.id = paciente.id
 
-        // Vaciar formulario
+            const pacientesActualizados = pacientes.map( pacienteState => pacienteState.id === paciente.id ? objetoPaciente : pacienteState)
+
+        } else {
+            // Registro
+            //... se hace una copia y evita que se reemplacen los datos del objetoPaciente
+            objetoPaciente.id = generarId()
+            setPacientes([...pacientes, objetoPaciente]);
+        }
+
+
+        // Vaciar formulario después de agregar
         setNombre('')
         setPropietario('')
         setCorreo('')
@@ -117,7 +137,7 @@ function Formulario({ pacientes, setPacientes }) {
                 <input 
                     type="submit" 
                     className="p-2 w-60 bg-green-500 hover:bg-green-600 rounded-lg text-white cursor-pointer uppercase font-bold transition-all"
-                    value="Agregar paciente"
+                    value={ paciente.id ? 'Actualizar' : 'Agregar paciente'}
                 />
             </form>
         </div>

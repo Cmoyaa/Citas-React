@@ -1,7 +1,7 @@
 import Paciente from "./Paciente";
 import logo from '../assets/img/no-info.png';
 
-function ListadoPacientes({ pacientes}) {
+function ListadoPacientes({ pacientes, setPaciente }) {
     return (
         <div className="md:w-1/2 lg:w-3/5">
 
@@ -17,6 +17,7 @@ function ListadoPacientes({ pacientes}) {
                             <Paciente
                                 key={paciente.id}
                                 paciente={paciente}
+                                setPaciente={setPaciente}
                             />
                         )
                     })}
