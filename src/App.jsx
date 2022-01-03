@@ -8,7 +8,7 @@ function App() {
   const [ pacientes, setPacientes ] = useState([]);
 
   return (
-    <div className="container mx-auto mt-10 mb-5">
+    <div className="container mx-auto mt-10 mb-96">
       <Header />
       <div className="mt-12 md:flex">
         <Formulario 
