@@ -2,7 +2,7 @@ function Paciente({paciente}) {
 
     const { nombre, propietario, correo, fecha, sintomas } = paciente
     return (
-        <div className="m-5 p-5 bg-white shadow-md rounded-xl">
+        <div className="m-5 p-5 bg-white shadow-md rounded-xl mb-4">
             <p className="font-bold mb-4">Nombre: <span className="font-normal">{nombre}</span> </p>
             
             <p className="font-bold mb-4">Propietario: <span className="font-normal">{propietario}</span> </p>
