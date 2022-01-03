@@ -13,7 +13,7 @@ function Formulario({ pacientes, setPacientes }) {
     const generarId = () => {
         const random = Math.random().toString(10).substr(2);
         const fecha = Date.now().toString(36)
-        
+
         return random + fecha;
     }
 
@@ -100,7 +100,7 @@ function Formulario({ pacientes, setPacientes }) {
                     <input 
                         id="fecha"
                         type="date" 
-                        className="text-gray-400 border-2 w-full p-2 my-3 rounded-md"
+                        className="border-2 w-full p-2 my-3 rounded-md"
                         value={fecha}
                         onChange={ (e) => setFecha(e.target.value) }
                     />
